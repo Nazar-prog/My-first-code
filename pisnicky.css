@@ -15,16 +15,17 @@ html.is-blue-theme{
 }html{scroll-behavior:smooth}
 article h2::before, article h2::after {content:"🎶"}
 button{
+  transition: translate .2s linear, box-shadow .2s linear;
   background-color: var(--second-color);
   cursor: pointer;
   font-size: 2rem;
   border-radius: 7px;
 }
-a { text-decoration: none } a:hover { color:red }
+a {transition: color .2s linear;text-decoration: none}
+a:hover { color:red }
 body::-webkit-scrollbar, .nav-tp-block::-webkit-scrollbar { width: 0 }
 
 /*Group style⬇️*/
-a, button, li { transition: background-color .2s linear, color .2s linear, translate .2s linear, box-shadow .2s linear }
 .show-menu.activated:disabled, button:disabled { background-color:rgb(80,80,80); color:black}
 footer, .themes-switcher, .nav-tp-block { text-align: center }
 header, article h2 { font-size: 1.75rem }
@@ -33,9 +34,9 @@ footer, li { font-size: 2.5rem }
 /*Group style⬆️*/
 
 body{
+  transition: background-color 1s linear, color 1s linear;
   font-family: Roboto,sans-serif; font-weight: 900;
   background-color: var(--first-color); color: var(--text-color);
-  transition: background-color 1s linear, color 1s linear;
   text-shadow: 0 0 5px rgb(255,0,255);
   padding: .5rem 0 .5rem .5rem;
   overflow-x: hidden;
@@ -82,6 +83,7 @@ audio{
 /*ul and li*/
 ul{list-style:none }
 li{
+  transition: background-color .2s linear, translate .2s linear, box-shadow .2s linear;
   background-color: color-mix(in srgb,var(--li-color-bg) 40%,black);
   margin: 5px 0;
   border-radius: 10px;
