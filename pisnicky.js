@@ -30,7 +30,7 @@ const songs = [
 ];container.innerHTML = songs.map(({i,t,s})=>`<article id='${i}'><h2>${t}</h2><audio src='${s}'preload='none'controls></audio></article>`).join('')
 
 //Навігація
-function showMenuLogic(){
+function showMenuLogic() {
   navMenu.classList.toggle('activated');
   btnSM.classList.toggle('activated');
   btnSM.textContent = btnSM.classList.contains('activated') ? '✖' : '☰';
@@ -70,7 +70,7 @@ container.addEventListener('play', e => {if (e.target.tagName === 'AUDIO') {audi
 //Theme switcher
 class ThemeSwitcher {
   constructor() {
-    this.switchThemeButtonElement = document.querySelector('[data-theme-switcher]')
+    this.switchThemeButtonElement = document.querySelector('.themes-switcher-btn')
     this.setInitialSettings(); this.updTextBtn()
   } get blueCached() { return localStorage.getItem('theme') === 'blue' }
   setInitialSettings() { this.switchThemeButtonElement.addEventListener('click', this.onClick); document.documentElement.classList.toggle('is-blue-theme', this.blueCached) }

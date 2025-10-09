@@ -1,4 +1,4 @@
-*{box-sizing:border-box;user-select:none;padding:0;margin:0;border:0;}
+*{box-sizing:border-box;user-select:none;padding:0;margin:0;border:0;outline:none;}
 :root{
 --text-color:rgb(0,0,100);
 --first-color:rgb(240,240,100);
@@ -25,13 +25,13 @@ a {transition: color .2s linear;text-decoration: none}
 a:hover { color:red }
 body::-webkit-scrollbar, .nav-tp-block::-webkit-scrollbar { width: 0 }
 
-/*Group style⬇️*/
+/* Групові стилі⬇️*/
 .show-menu.activated:disabled, button:disabled { background-color:rgb(80,80,80); color:black}
 footer, .themes-switcher, .nav-tp-block { text-align: center }
 header, article h2 { font-size: 1.75rem }
 button, a { color: var(--text-color) }
 footer, li { font-size: 2.5rem }
-/*Group style⬆️*/
+/* Групові стилі⬆️*/
 
 body{
   transition: background-color 1s linear, color 1s linear;
@@ -41,7 +41,8 @@ body{
   padding: .5rem 0 .5rem .5rem;
   overflow-x: hidden;
 }body.noneScroll{overflow-y: hidden}
-/*Block music(tp) and <a>*/
+
+/* Блок навігації і a */
 .nav-tp-block{
   transition: translate .3s linear, border-left .3s linear;
   position: fixed; top: 60px; right: 0;
@@ -50,37 +51,39 @@ body{
   border-radius: 15px;
   box-shadow: 0 0 10px 5px var(--second-color);
   translate: 27.5vw 0;
-  overflow-y: auto;
+  overflow-y: scroll;
   padding: 5px;
   border-left: 1.5vw solid var(--second-color);
 }.nav-tp-block.activated { translate: 0; border-left: 0 solid #000}
 
-/*Theme switcher(Blue-Yellow)*/
+/* Перемикач теми(синя-жовта)*/
 .themes-switcher-btn{
   position: fixed; top: 5px; right: 5px;
   width: 150px; height: 50px;
 }.themes-switcher-btn:hover{ box-shadow: 3px 3px 7px rgb(0,0,0); translate: 0 -3px}
-/*Show menu*/
+
+/* Показати меню */
 .show-menu {
   width: 150px; height: 50px;
   position: fixed; top: 5px; right: 160px;
 }.show-menu:hover {box-shadow: 3px 3px 7px rgb(0,0,0); translate: 0 -3px}
-/*Articles(Music)*/
+
+/* Всі article */
 article{
-  scroll-margin-top: 225px;
+  scroll-margin-top: 40vh;
   margin-top: 2rem;
   border-radius: 30px;
 }
-article h2 {margin-bottom: 8px; width: max-content; }
+article h2 {margin-bottom: 8px; }
 
-/*Audios*/
+/* Всі audio */
 audio{
-  height: 55px; width: 70vw;
+  height: 55px; width: 100%;
   box-shadow: 7px 7px 10px rgba(0,0,0,.55);
   border-radius: 30px;
 }
 
-/*ul and li*/
+/* ul і li */
 ul{list-style:none }
 li{
   transition: background-color .2s linear, translate .2s linear, box-shadow .2s linear;
@@ -92,32 +95,48 @@ li{
   translate: 0 -6px;
   box-shadow: 0 0 15px red, 0 0 20px 5px red inset;
 }
-/*All animation
-Ефект підсвічування аудіо*/ @keyframes highlightFade{
+/* Всі анімації
+Ефект підсвічування аудіо */ @keyframes highlightFade{
   0%{background-color:var(--color-highLight)} 
   100%{background-color: transparent}
 }
 .highlight { animation: highlightFade 3s linear }
 
-/*Theme animation(Top block)*/ @keyframes theme-animation_top-block{
-  0%{top: -100%} 
-  50%{top: -50%} 
-  100%{top: -100%}
+/* Анімація теми(верхній блок)*/ @keyframes theme-animation_top-block{
+  0%{top: -100vh} 
+  50%{top: -50vh} 
+  100%{top: -100vh}
 }
-/*(Bottom block)*/ @keyframes theme-animation_bottom-block{
-  0%{top: 100%} 
-  50%{top: 50%} 
-  100%{top: 100%}
+/* (Нижній блок) */ @keyframes theme-animation_bottom-block{
+  0%{top: 100vh} 
+  50%{top: 50vh} 
+  100%{top: 100vh}
 }
-/*Top block*/
+/* Верхній блок */
 .theme-animation-TopBlock{
   position: fixed; left: 0;
   width: 100vw; height: 100vh;
   background-color: var(--second-color);
 }.theme-animation-TopBlock.th-anim {animation: theme-animation_top-block 1.5s}
-/*Bottom block*/
+/* Нижній блок */
 .theme-animation-BottomBlock{
   position: fixed; left: 0;
   width: 100vw; height: 100vh;
   background-color: var(--second-color);
 }.theme-animation-BottomBlock.th-anim {animation: theme-animation_bottom-block 1.5s}
+
+/* Анімація появлення */ @keyframes onLoadAnimation {
+  0%{opacity: 0; translate: 0 -100%; width: 0}
+  100%{opacity: 1; translate: 0; width: 70vw;}
+}
+.wrapper{ width: 70vw; animation: onLoadAnimation 2.5s}
+/* @media */
+@media(max-width: 400px) {
+  header{ font-size: 0.75rem }
+  article h2{ font-size: 1rem }
+  a{ font-size: 1.3rem }
+  audio{ width: 90vw }
+  .nav-tp-block, .show-menu{
+    display: none;
+  }
+}

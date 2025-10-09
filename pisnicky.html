@@ -1,16 +1,28 @@
 <!DOCTYPE html><html lang="uk" dir="ltr">
-<head><meta charset="UTF-8">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="pisnicky.css"><script src="pisnicky.js" defer></script><!-- <=== Style and script-->
+<link rel="stylesheet" href="pisnicky.css"><script src="pisnicky.js" defer></script>
 <title>Сайт з піснями</title>
 </head><body>
-<header id="top"><h1>На сайті можете слухати пісні</h1></header>
-<!--.nav-tp-block-->
+<div class="wrapper">
+  <!-- Header -->
+  <header id="top"><h1>На сайті можете слухати пісні</h1></header>
+
+  <!-- Блок пісень -->
+  <main>Очікуємо загрузку пісень ⏳</main><br>
+
+  <!-- Footer -->
+  <footer><a href="#top">↥ На початок сторінки ↥</a></footer>
+</div>
+<!-- Theme-switcher -->
+<button class="themes-switcher-btn">Очікуємо ⏳</button>
+<!--Show menu-->
+<button class="show-menu">☰</button>
+<!-- .nav-tp-block -->
 <nav class="nav-tp-block">
   <ul>
     <li><a href="#Spohady">Спогади</a></li>
@@ -38,13 +50,7 @@
     <li><a href="#PidZoriamy">Азовсталь десь там під зорями</a></li>
   </ul>
 </nav>
-<main>Очікуємо загрузку пісень ⏳</main><br>
-<footer><a href="#top">↥ На початок сторінки ↥</a></footer>
-<!--Theme-switcher-->
-<button class="themes-switcher-btn" data-theme-switcher>Очікуємо ⏳</button>
-<!--Show menu-->
-<button class="show-menu">☰</button>
-<!--Спеціальні блоки-->
+<!-- Спеціальні блоки -->
 <div class="theme-animation-TopBlock"></div>
 <div class="theme-animation-BottomBlock"></div>
 </body></html>
